@@ -1,0 +1,115 @@
+﻿<%- include('partials/header') -%>
+    
+    <section class="wrapper bg-light angled upper-end">
+      <div class="container py-14 py-md-16">
+        <!--/.row -->
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2 class="display-4 mb-3 text-center">Add Your Shipment Details</h2>
+            <!-- <p class="lead text-center mb-10">Reach out to us from our contact form and we will get back to you shortly.</p> -->
+            <form class="contact-form needs-validation" method="post" action="/book-a-courier" novalidate="">
+              <div class="messages"></div>
+              <div class="row gx-4">
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_name" type="text" name="sendername" class="form-control" placeholder="Jane" required="">
+                    <label for="form_name">Sender's Name *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Sender name. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_lastname" type="text" name="receivername" class="form-control" placeholder="Doe" required="">
+                    <label for="form_lastname">Receiver's Name *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Receiver name. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="senderphoneno" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Sender's Phone No *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid Phone No. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="receiverphoneno" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Receiver's Phone No *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid Phone No. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="senderaddress" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Sender's Address *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Sender Address. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="receiveraddress" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Receiver's Address *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Receiver Address. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="sendercity" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Sender's City *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Address. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="receivercity" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Receiver's City *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Address. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-12">
+                  <div class="form-floating mb-4">
+                    <textarea id="form_message" name="detail" class="form-control" placeholder="Your message" style="height: 150px" required=""></textarea>
+                    <label for="form_message">Detail (Optional)*</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Detail. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-12 text-center">
+                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Submit">
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+
+  <%- include('partials/footer') -%>

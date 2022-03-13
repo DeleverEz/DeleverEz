@@ -1,0 +1,75 @@
+<%- include('partials/header') -%>
+<div class="offcanvas-wrapper mt-5" >
+  <!-- Page Title-->
+
+  <!-- Page Content-->
+  <div class="container padding-bottom-3x mb-5"  style="padding-top: 50px;"> 
+    <div class="row mt-5">
+      <div class="col-lg-4">
+        <aside class="user-info-wrapper">
+          <div
+            class="user-cover"
+            style="background-image: url(/../assets/img/user-cover-img.jpg)"
+          >
+            <div
+              class="info-label"
+              data-toggle="tooltip"
+              title="You currently have 290 Reward Points to spend"
+            >
+              <i class="icon-medal"></i><%= user.accounttype %>
+            </div>
+          </div>
+          <div class="user-info">
+            <!-- <div class="user-avatar">
+              <a class="edit-avatar" href="#"></a
+              ><img src="img/account/user-ava.jpg" alt="User" />
+            </div> -->
+            <div class="user-data">
+              <h4><%= user.username %></h4>
+              <span>Joined <%= user.date %></span>
+            </div>
+          </div>
+        </aside>
+        <nav class="list-group">
+          <a class="nav-link list-group-item " href="/profile">
+            <i class="icon-head"></i>Profile</a>
+          <a class="nav-link list-group-item with-badge active" href="/order">
+            <i class="icon-bag"></i>Orders<span class="badge badge-primary badge-pill"></span>
+          </a>
+          </nav>
+      </div>
+      <div class="col-lg-8">
+        <div class="padding-top-2x mt-2 hidden-lg-up"></div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Weight</th>
+                <th>Customer Address</th>
+                <th>destinationcity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% bookcods.forEach(function(bookcod){ %>
+              <tr>
+                <td><a class="text-medium navi-link" href="#" data-toggle="modal" data-target="#orderDetails"><%= bookcod.orderid %></a></td>
+                <td><%= bookcod.customername %></td>
+                <td><span class="text-danger"><%= bookcod.weight %>Kg</span></td>
+                <td><span class="text-medium"><%= bookcod.customeraddress %></span></td>
+                <td><span class="text-medium"><%= bookcod.destinationcity %></span></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+        <hr>
+        <div class="text-right" ><a class="btn btn-link-primary margin-bottom-none" href="#"><i class="fa-solid fa-angles-down"></i>&nbsp;Order Details</a></div>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') -%>
+</div>

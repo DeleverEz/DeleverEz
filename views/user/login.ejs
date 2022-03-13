@@ -1,0 +1,57 @@
+﻿<%- include('partials/header') -%>
+    
+    <section class="wrapper bg-light angled upper-end">
+      <div class="container py-14 py-md-16">
+        <!--/.row -->
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2 class="display-4 mb-3 text-center">Sign Up</h2>
+            <p class="lead text-center mb-10">Reach out to us from our contact form and we will get back to you shortly.</p>
+            <form class="contact-form" method="post" action="/login" novalidate="">
+              <div class="messages"></div>
+              <div class="row gx-4">
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_username" type="text" pattern="^(\d|\w)+$" title="Username should not contain any special characters and space. e.g. John" name="username" class="form-control" placeholder="Doe" required="">
+                    <label for="form_username">Username *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Username. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" title="Password must contain minimum eight characters, at least one letter and one number"  name="password" class="form-control" placeholder="Doe" required="">
+                    <label for="form_password">Password *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Password. </div>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Login">
+                  <a href="/register" type="submit" class="btn btn-primary rounded-pill btn-send mb-3" >Sign Up</a>
+                </div>
+                <!-- /column -->
+                <!-- <div class="col-12 text-center">
+                    <a class="nav-link" href="/login">Already have an account</a>
+                </div> -->
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+
+  <%- include('partials/footer') -%>

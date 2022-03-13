@@ -1,0 +1,369 @@
+﻿<%- include('partials/header') -%>
+    
+    <section class="wrapper bg-light angled upper-end">
+      <div class="container py-14 py-md-16">
+        <!--/.row -->
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2 class="display-4 mb-3 text-center">Add your Business Shipment Details</h2>
+            <!-- <p class="lead text-center mb-10">Reach out to us from our contact form and we will get back to you shortly.</p> -->
+            <form class="contact-form " name="codform" method="post" action="/book-a-cod" novalidate="">
+              <div class="messages"></div>
+          
+              <div class="row gx-4">
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_name" type="text" name="customername" class="form-control" placeholder="Jane" required>
+                    <label for="form_name">Customer Name *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Customer Name. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="customerphoneno" data-inputmask="'mask': '0399-99999999'" class="form-control" placeholder="XXXXX-XXXXXXX-X" required="">
+                    <label for="form_email">Customer Phone No *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Customer Phone No. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4">
+                    <select class="form-select" id="Order-type" name="ordertype" required="">
+                      <option selected="" disabled="" value="">Order Type</option>
+                      <option value="COD">COD</option>
+                      <option value="Non-Cod">Non-COD</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Select a Order Type. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4">
+                    <select class="form-select" id="deliverytype"  name="deliverytype" required="">
+                      <option selected="" disabled="" value="">Delivery Type</option>
+                      <option id="flyer" value="flyer">Flyer</option>
+                      <option id="box" value="box">Box</option>
+                      <option value="detain">Detain</option>
+                      <option id="overnight" value="overnight">Overnight</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Select a Order Type. </div>
+                  </div>
+                </div>
+                
+                <!-- /column -->
+                
+                
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4" >
+                    <select class="form-select" id="destinationcity"   name="destinationcity" required="">
+                      <option selected="" disabled="" value="">Destination City</option>
+                      <option value="Bahawalpur">Bahawalpur</option>
+                      <option value="Faisalabad">Faisalabad</option>
+                      <option value="Islamabad">Islamabad</option>
+                      <option value="Karachi">Karachi</option>
+                      <option value="Lahore">Lahore</option>
+                      <option value="Multan">Multan</option>
+                      <option value="Rawalpindi">Rawalpindi</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Select a Order Type. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="weight" type="text" name="weight" onkeyup="calc();" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Weight *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Weight. </div>
+                  </div>
+                </div>
+                <div class="col-md-6" style="display: none;" id="cod-ammount">
+                  <div class="form-floating mb-4">
+                    <input id="codammount" type="text" name="codammount" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">COD Ammount (Optional) *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter COD Ammount. </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="deliverycharges"  type="text" readonly name="deliverycharges" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Delivery Charges *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Delivery Charges. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="text" name="customeraddress" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_email">Customers Address *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Customers Address. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-12">
+                  <div class="form-floating mb-4">
+                    <textarea id="form_message" name="details" class="form-control" placeholder="Your message" style="height: 150px" required=""></textarea>
+                    <label for="form_message">Detail (Optional)*</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter  Detail. </div>
+                  </div>
+                </div>
+                
+                <!-- /column -->
+                <div class="col-12 text-center">
+                  <input type="submit" onclick="" class="btn btn-primary rounded-pill btn-send mb-3" value="Submit">
+                  <!-- <button onclick='addform()' class="btn btn-primary rounded-pill btn-send mb-3">Add More</button> -->
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+           
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  <script>
+    document.getElementById("deliverycharges").value = 0 ;
+    document.getElementById('Order-type').addEventListener('change', function() {
+      const Codammount_field = document.getElementById('cod-ammount');
+
+      const order_type = this.value;
+      if(this.value == 'COD'){
+        Codammount_field.style.display = '';
+        overnight.style.display = 'none';
+        flyer.style.display = '';
+        box.style.display = '';
+      }else if(this.value == 'Non-Cod'){
+        flyer.style.display = 'none';
+        box.style.display = 'none';
+        overnight.style.display = '';
+      }
+      else{
+        Codammount_field.style.display = 'none'
+      }
+    });
+    function calc(){
+      const deliverytype = document.getElementById('deliverytype');
+      const ordertype = document.getElementById('Order-type');
+      const weight = document.getElementById('weight');
+        var price = 300;
+
+      if(ordertype.value && deliverytype.value && weight.value != ''){
+        if(ordertype.value == 'COD' && deliverytype.value == 'flyer'){
+        if(weight.value <= 0.5 ){
+         document.getElementById("deliverycharges").value = price ;
+        }else if(weight.value <= 1){
+         document.getElementById("deliverycharges").value = price + 50;
+        }else if(weight.value > 1){
+          modulus =  Math.floor(weight.value / 0.5);
+          // console.log(modulus-2) 
+          let fact = 350;
+          for (i = 1; i <= modulus-2; i++) {
+              fact += 250;
+          }
+         document.getElementById("deliverycharges").value = fact;
+        }
+      }else if(ordertype.value == 'COD' && deliverytype.value == 'box'){
+        var price2 = 330;
+        if(weight.value <= 1 ){
+          document.getElementById("deliverycharges").value = price2;
+        }else if(weight.value <= 2){
+          document.getElementById("deliverycharges").value = price2 + 220;
+        }else if(weight.value <= 3){
+          document.getElementById("deliverycharges").value = price2+ 220 + 200;
+        }else if(weight.value < 5){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 750;
+              let count = 5;
+              outerloop =3;
+              var match_value;
+              var n=0;
+              for (i = outerloop ; i <= count  ; i++) {
+                if(weight.value % i == 0) {
+                  fact += 220 * (n);
+                  n++;
+                }else{
+                  match_value = Math.floor(weight.value / i);
+                  if(match_value == n){
+                    fact += 220 * (n);
+                  }else{
+                    n++;
+                  }
+                } 
+              }
+          document.getElementById("deliverycharges").value = fact;
+        }else if(weight.value == 5){
+          document.getElementById("deliverycharges").value = 1000;
+        }else if(weight.value < 10){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 1000;
+              let count = 10;
+              outerloop =5;
+              var match_value;
+              var n=0;
+              for (i = outerloop ; i <= count  ; i++) {
+                if(weight.value % i == 0) {
+                  fact += 180 * (n);
+                  n++;
+                }else{
+                  match_value = Math.floor(weight.value / i);
+                  if(match_value == n){
+                    fact += 180 * (n);
+                  }else{
+                    n++;
+                  }
+                } 
+              }
+          document.getElementById("deliverycharges").value = fact;
+        }else if(weight.value == 10){
+          document.getElementById("deliverycharges").value = 1800;
+        }else if(weight.value < 20){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 1800;
+              let count = 20;
+              outerloop =10;
+              var match_value;
+              var n=0;
+              for (i = outerloop ; i <= count  ; i++) {
+                if(weight.value % i == 0) {
+                  fact += 150 * (n);
+                  n++;
+                }else{
+                  match_value = Math.floor(weight.value / i);
+                  console.log(n)
+                  console.log(match_value)
+                  if(match_value == n){
+                    fact += 150 * (n);
+                  }else{
+                    n++;
+                  }
+                } 
+              }
+          document.getElementById("deliverycharges").value = fact;
+        }else if(weight.value == 20){
+          document.getElementById("deliverycharges").value = 2800;
+        }else if(weight.value < 30){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 2800;
+              let count = 30;
+              outerloop =20;
+              var match_value;
+              var n=0;
+              for (i = outerloop ; i <= count  ; i++) {
+                if(weight.value % i == 0) {
+                  fact += 110 * (n);
+                  n++;
+                }else{
+                  match_value = Math.floor(weight.value / i);
+                  console.log(n)
+                  console.log(match_value)
+                  if(match_value == n){
+                    fact += 110 * (n);
+                  }else{
+                    n++;
+                  }
+                } 
+              }
+          document.getElementById("deliverycharges").value = fact;
+        }else if(weight.value == 30){
+          document.getElementById("deliverycharges").value = 4000;
+        }else{
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 4000;
+              outerloop = 30;
+              var match_value;
+              var n=0;
+              for (i = 30 ; i <= modulus + 1 ; i++) {
+                if(weight.value % i == 0) {
+                  fact += 130 * (n);
+                  n++;
+                }else{
+                  match_value = Math.floor(weight.value / i);
+                  console.log(n)
+                  console.log(match_value)
+                  if(match_value == n){
+                    fact += 130 * (n);
+                  }else{
+                    n++;
+                  }
+                } 
+              }
+          document.getElementById("deliverycharges").value = fact;
+          }
+
+      }else if(ordertype.value == 'COD' && deliverytype.value == 'detain'){
+        if(weight.value <=3){
+          document.getElementById("deliverycharges").value = 400;
+        }
+        else if(weight.value > 3){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 400;
+              outerloop =3;
+              var match_value;
+              var num;
+              num = modulus - 3;
+              fact += 100 * (num);
+          document.getElementById("deliverycharges").value = fact;
+        }
+      }else if(ordertype.value == 'Non-Cod' && deliverytype.value == 'overnight' ){
+        if(weight.value <=0.5){
+          document.getElementById("deliverycharges").value = 290;
+        }else if(weight.value <= 1){
+          document.getElementById("deliverycharges").value = 350;
+        }else if(weight.value <= 2){
+          document.getElementById("deliverycharges").value = 550;
+        }else if(weight.value <= 3){
+          document.getElementById("deliverycharges").value = 800;
+        }else if(weight.value <= 5){
+          document.getElementById("deliverycharges").value = 1100;
+        }
+      }
+      else if(ordertype.value == 'Non-Cod' && deliverytype.value == 'detain'){
+        if(weight.value <=5){
+          document.getElementById("deliverycharges").value = 500;
+        }
+        else if(weight.value > 5){
+          modulus =  Math.floor(weight.value / 1);
+              let fact = 500;
+              outerloop =3;
+              var match_value;
+              var num;
+              num = modulus - 5;
+              fact += 80 * (num);
+          document.getElementById("deliverycharges").value = fact;
+        }
+      }
+
+
+      }
+      else{
+        document.getElementById("deliverycharges").value =0;
+      }
+
+      
+
+    }
+    
+    
+
+  </script>
+
+  <%- include('partials/footer') -%>

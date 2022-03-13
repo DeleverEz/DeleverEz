@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="elemis">
+  <title>DeliverEz &#8211; Every delivery made easier</title>
+  <link rel="shortcut icon" href="/../assets/img/favicon.png">
+  <link rel="stylesheet" href="/../assets/css/plugins.css">
+  <link rel="stylesheet" href="/../assets/css/style.css">
+  <link rel="stylesheet" href="/../assets/css/stylee.css">
+  <link rel="stylesheet" href="/../assets/css/slick.css">
+  <link rel="stylesheet" href="/../assets/css/colors/sky.css">
+  <link rel="preload" href="/../assets/css/fonts/urbanist.css" as="style" onload="this.rel='stylesheet'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+
+  <!-- Vendor Styles including: Bootstrap, Font Icons, Plugins, etc.-->
+  <!-- <link rel="stylesheet" media="screen" href="/../assets/css/vendor.min.css"> -->
+  <!-- Main Template Styles-->
+  <!-- <link id="mainStyles" rel="stylesheet" media="screen" href="/../assets/css/styles.min.css"> -->
+  <!-- Customizer Styles-->
+  <!-- <link rel="stylesheet" media="screen" href="/../assets/css/customizer/customizer.min.css"> -->
+</head>
+<body>
+  <div class="content-wrapper">
+    <header class="wrapper bg-light">
+      <nav class="navbar navbar-expand-lg classic transparent navbar-light">
+        <div class="container flex-lg-row flex-nowrap align-items-center">
+          <div class="navbar-brand w-100">
+            <a href="index.html">
+              <img src="/../assets/img/logo-12.png" style="margin-top: -7px;" srcset="/../assets/img/logo-12.png 2x" alt="">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas-nav">
+            <div class="offcanvas-header d-lg-none d-xl-none">
+              <a href="index.html"><img src="/../assets/img/logo-13.png" srcset="/../assets/img/logo-13.png 2x" alt=""></a>
+              <button type="button" class="btn-close btn-close-white offcanvas-close offcanvas-nav-close" aria-label="Close"></button>
+            </div>
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+              <% if(CurrentUser){ %>
+              <% if(CurrentUser.accounttype == 'customer'){ %> 
+              <li class="nav-item"><a class="nav-link" href="/method">DeliverEz for Customers</a></li>
+              <% }else if(CurrentUser.accounttype == 'business' && CurrentUser.status == 'approved'){ %> 
+              <li class="nav-item"><a class="nav-link" href="/book-a-cod">DeliverEz for Business</a></li>
+              <% }else{ %> 
+                <%} %>
+
+               <% } %>
+            </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown "><a class="btn btn-sm btn-primary rounded-pill nav-link dropdown-toggle" href="" style="color: white; padding-left: 20px;">
+              <% if(CurrentUser){ %> 
+              <%= CurrentUser.username %>
+              <% }else{ %>
+                Your Account
+             <% } %>
+
+            </a>
+              <ul class="dropdown-menu">
+                <% if(!CurrentUser){ %>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle " href="/login">Login</a></li>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle " href="/register">Sign Up</a></li>
+                <% }else{ %>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle " href="/profile">Profile</a></li>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle " href="/profile/order-history">Orders</a></li>
+                <li class="dropdown"><a class="dropdown-item dropdown-toggle " href="/logout">Logout</a></li>
+                <%  } %>
+              </ul>
+            </li>
+          </ul>
+          <!-- /.navbar-collapse -->
+          <div class="navbar-other ms-lg-4">
+            <ul class="navbar-nav flex-row align-items-center ms-auto" data-sm-skip="true">
+              <li class="nav-item d-none d-md-block">
+                <a href="/method" class="btn btn-sm btn-primary rounded-pill">Make Your First Move</a>
+              </li>
+              <li class="nav-item d-lg-none">
+                <div class="navbar-hamburger"><button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button></div>
+              </li>
+            </ul>
+            <!-- /.navbar-nav -->
+          </div>
+          
+          
+          <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+    </header>
+    <!-- /header -->

@@ -1,0 +1,225 @@
+﻿<%- include('partials/header') -%>
+    
+    <section class="wrapper bg-light angled upper-end">
+      <div class="container py-14 py-md-16">
+        <!--/.row -->
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <h2 class="display-4 mb-3 text-center">Sign Up</h2>
+            <p class="lead text-center mb-10">Reach out to us from our contact form and we will get back to you shortly.</p>
+            <form class="" method="post" action="/register" novalidate="" enctype="multipart/form-data" >
+              <div class="messages"></div>
+              <div class="row gx-4">
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input  type="text" name="username" class="form-control" placeholder="Jane" required="">
+                    <label for="form_name">Username *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your First name. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="" type="text" name="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Doe" required="">
+                    <label for="form_lastname">Email *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Valid Email. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_password" type="password" name="password" class="form-control" placeholder="Doe" required="">
+                    <label for="form_lastname">Password *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please enter your Password. </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4" >
+                    <select class="form-select"    name="usercity" required="">
+                      <option selected="" disabled="" value="">Destination City</option>
+                      <option value="Bahawalpur">Bahawalpur</option>
+                      <option value="Faisalabad">Faisalabad</option>
+                      <option value="Islamabad">Islamabad</option>
+                      <option value="Karachi">Karachi</option>
+                      <option value="Lahore">Lahore</option>
+                      <option value="Multan">Multan</option>
+                      <option value="Rawalpindi">Rawalpindi</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Select a Order Type. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_phoneno" type="text" data-inputmask="'mask': '0399-9999999'" name="phoneno" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_phoneno">Phone No *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid Phone No. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_phone-sec" type="text" name="phonenosec" data-inputmask="'mask': '0399-9999999'" class="form-control" placeholder="jane.doe@example.com" >
+                    <label for="form_phone-sec">Phone No (Secondary Optional)*</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid Secondary Phone No. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_CNIC" type="text" name="cnic" data-inputmask="'mask': '99999-9999999-9'" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_CNIC">CNIC *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid CNIC. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_business_name" type="text" name="businessname" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_business_name">Business Name *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Valid Business Name. </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4">
+                    <select class="form-select" id="select-account"  name="accounttype" required="">
+                      <option selected="" disabled="" value="">Account Type</option>
+                      <option value="business">Business Account</option>
+                      <option value="customer">Customer Account</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please select a Account Type. </div>
+                  </div>
+                </div>
+
+                <script>
+                  document.getElementById('select-account').addEventListener('change', function() {
+                    const business = document.getElementById('bussiness-area');
+                    const account_type = this.value;
+
+                    if(this.value == 'business'){
+                      business.style.display = '';
+                      // previous_company.style.display = '';
+                    }
+                    else if(this.value == 'customer'){
+                      business.style.display = 'none'
+                      // previous_company.style.display = 'none'
+                      
+                    }
+                  });
+                </script>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_address" type="text" name="address" class="form-control" placeholder="jane.doe@example.com" required="">
+                    <label for="form_address">Address *</label>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Enter Your Address. </div>
+                  </div>
+                </div>
+                <!-- <div class="col-md-8 mt-3">
+                  <div class="form-select-wrapper mb-4" >
+                    <select class="form-select" id="previous_company" style="display: none;"  name="previous_company" required="">
+                      <option selected="" disabled="" value="">Which Courier Company do You use Currently?</option>
+                      <option value="leopards">Leopards</option>
+                      <option value="m&p">M&P</option>
+                    </select>
+                    <div class="valid-feedback"> Looks good! </div>
+                    <div class="invalid-feedback"> Please Select a Order Type. </div>
+                  </div>
+                </div> -->
+                <div class="row justify-content-between" style="display: none;" name="bussiness-area" id="bussiness-area">
+                  <div class="col-md-5 mt-5">
+                    <p class="lead text-center ">CNIC Front Image</p>
+                    <div class="box">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input name="cnicf" type="file" class="image-upload" accept="image/*" />
+                          <div class="valid-feedback"> Looks good! </div>
+                          <div class="invalid-feedback"> Please Upload Your CNIC Front Image. </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mt-5" style="float: left;"> 
+                    <p class="lead text-center">CNIC Back Image</p>
+                    <div class="box">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input name="cnicb" type="file" class="image-upload" accept="image/*" />
+                          <div class="valid-feedback"> Looks good! </div>
+                          <div class="invalid-feedback"> Please Upload Your CNIC Back Image. </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mt-5">
+                    <p class="lead text-center">Bank Cheque Image</p>
+                    <div class="box">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input name="check" type="file" class="image-upload" accept="image/*" />
+                          <div class="valid-feedback"> Looks good! </div>
+                          <div class="invalid-feedback"> Please Upload Your Check Image. </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mt-5 ">
+                    <p class="lead text-center">Shop Front Image</p>
+                    <div class="box">
+                      <div class="js--image-preview"></div>
+                      <div class="upload-options">
+                        <label>
+                          <input name="shop" type="file" class="image-upload" accept="image/*" />
+                          <div class="valid-feedback"> Looks good! </div>
+                          <div class="invalid-feedback"> Please Upload Your Shop Image. </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-12 text-center mt-5">
+                  <button class="btn btn-primary rounded-pill btn-send mb-3" >Submit</button>
+                </div>
+                <!-- /column -->
+                <div class="col-12 text-center">
+                    <a class="nav-link" href="/login">Already have an account</a>
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <!-- /form -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  
+
+  <%- include('partials/footer') -%>

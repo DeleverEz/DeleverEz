@@ -1,0 +1,170 @@
+<%- include('partials/header') -%>
+<div class="offcanvas-wrapper mt-5" >
+  <div class="container padding-bottom-3x mb-5 " style="padding-top: 50px;"> 
+    <div class="row mt-5">
+      <div class="col-lg-4">
+        <aside class="user-info-wrapper">
+          <div
+            class="user-cover"
+            style="background-image: url(assets/img/user-cover-img.jpg)"
+          >
+            <div
+              class="info-label"
+              data-toggle="tooltip"
+              title="You currently have 290 Reward Points to spend"
+            >
+              <i class="icon-medal"></i><%= user.accounttype %>
+            </div>
+          </div>
+          <div class="user-info">
+            <!-- <div class="user-avatar">
+              <a class="edit-avatar" href="#"></a
+              ><img src="img/account/user-ava.jpg" alt="User" />
+            </div> -->
+            <div class="user-data">
+              <h4><%= user.username %></h4>
+              <span>Joined <%= user.date %></span>
+            </div>
+          </div>
+        </aside>
+        <nav class="list-group">
+          <a class="nav-link list-group-item active" href="/profile">
+            <i class="icon-head"></i>Profile</a>
+          <a class="nav-link list-group-item with-badge" href="/profile/order-history">
+            <i class="icon-bag"></i>Orders<span class="badge badge-primary badge-pill"></span>
+          </a>
+        </nav>
+      </div>
+      <div class="col-lg-8">
+        <form class="contact-form" method="post" action="" novalidate="">
+          <div class="messages"></div>
+          <div class="row gx-4">
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_name"
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  placeholder="Jane"
+                  disabled
+                  value="<%= user.address %>"
+                />
+                <label for="form_email">Address *</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_lastname"
+                  type="text"
+                  name="surname"
+                  class="form-control"
+                  disabled
+                  value="<%= user.email %>"
+                />
+                <label for="form_email">Email *</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_email"
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  disabled
+                  value="<%= user.cnic %>"
+                />
+                <label for="form_email">CNIC *</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_email"
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  disabled
+                  value="<%= user.phoneno %>"
+                />
+                <label for="form_email">Phone No *</label>
+              </div>
+            </div>
+            <!-- /column -->
+            <!-- /column -->
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_email"
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  disabled
+                  value="<%= user.phonenosec %>"
+                />
+                <label for="form_email">Secondary Phone No *</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-4">
+                <input
+                  id="form_email"
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  disabled
+                  value="<%= user.businessname %>"
+                />
+                <label for="form_email">Business Name *</label>
+                </div>
+              </div>
+            </div>
+        <% if(user.accounttype == 'business'){ %>
+        <div class="grid grid-view projects-masonry">
+          <div class="row gx-md-8 gy-10 gy-md-13 isotope">
+            <div class="project item col-md-3 col-xl-3 product">
+              <figure class="lift rounded mb-6"><img src="assets/images/userimg/<%= user.cnic_front %>" alt=""></figure>
+              <div class="project-details d-flex justify-content-center flex-column">
+                <div class="post-header">
+                  <p>CNIC Front Image</p>
+                </div>
+              </div>
+            </div>
+            <div class="project item col-md-3 col-xl-3 product">
+              <figure class="lift rounded mb-6"><img src="assets/images/userimg/<%= user.cnic_back %>" alt=""></figure>
+              <div class="project-details d-flex justify-content-center flex-column">
+                <div class="post-header">
+                  <p>CNIC Back Image</p>
+                </div>
+              </div>
+            </div>
+            <div class="project item col-md-3 col-xl-3 product">
+              <figure class="lift rounded mb-6"><img src="assets/images/userimg/<%= user.check_image %>" alt=""></figure>
+              <div class="project-details d-flex justify-content-center flex-column">
+                <div class="post-header">
+                  <p>Bank Cheque Image</p>
+                </div>
+              </div>
+            </div>
+            <div class="project item col-md-3 col-xl-3 product">
+              <figure class="lift rounded mb-6"><img src="assets/images/userimg/<%= user.house_front %>" alt=""></figure>
+              <div class="project-details d-flex justify-content-center flex-column">
+                <div class="post-header">
+                  <p>Shop Front Image</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <%- include('partials/footer') -%>
+</div>

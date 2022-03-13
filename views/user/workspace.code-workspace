@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\Downloads\\taskwud"
+		},
+		{
+			"path": "D:\\Order\\Mosque"
+		},
+		{
+			"path": "D:\\Order\\Ecommerce-Bakery-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "logistics"
+	}
+}
